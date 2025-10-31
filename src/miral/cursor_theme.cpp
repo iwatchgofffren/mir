@@ -63,7 +63,7 @@ void miral::CursorTheme::operator()(mir::Server& server) const
 
                 std::shared_ptr<mi::CursorImages> const xcursor_loader{std::make_shared<XCursorLoader>(theme)};
 
-                if (has_default_cursor(*xcursor_loader))
+                if (has_default_cursor(*xcursor_loader)) //maybe we should use load_cursor_theme not *xcursor_loader
                     return xcursor_loader;
 
                 mir::log_warning("Failed to load cursor theme: %s", theme.c_str());
@@ -73,4 +73,13 @@ void miral::CursorTheme::operator()(mir::Server& server) const
 
             BOOST_THROW_EXCEPTION(std::runtime_error(("Failed to load cursor theme: " + themes).c_str()));
         });
+}
+
+void miral::CursorTheme::load_cursor_at_runtime(mir::Server *server) const
+{
+    static char const* const option = "cursor-theme";
+    server->add_configuration_option(option, );
+
+
+    
 }

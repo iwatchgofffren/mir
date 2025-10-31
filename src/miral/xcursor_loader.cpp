@@ -67,6 +67,7 @@ private:
     std::shared_ptr<_XcursorImages> const save_resource;
 };
 
+// CAN USE FOREACH CYCLE THERE
 std::string const
 xcursor_name_for_mir_cursor(std::string const& mir_cursor_name)
 {

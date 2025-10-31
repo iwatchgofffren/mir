@@ -54,7 +54,7 @@ public:
     ~CursorTheme();
 
     void operator()(mir::Server& server) const;
-
+    void load_cursor_at_runtime(mir::Server *server) const;
 private:
     std::string const theme;
 };
