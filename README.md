@@ -23,6 +23,41 @@ API.
 - For announcements and other discussions on Mir see [Ubuntu Discourse](https://discourse.ubuntu.com/c/mir) or join
   [the matrix channel](https://matrix.to/#/#mir-server:matrix.org) to get in touch with the team.
 
+## How to build
+- Ensure that you have installed clang or gcc compiler
+- Ensure that you have CMake installed on your system
+- Feel free to use any of these linkers (gold, lld, mold)
+
+**Normal build (Can take up to 15 minutes)**
+```bash
+
+```
+**Faster bulid in parralell (Around 10 minutes)**
+```bash
+
+```
+**Fastest possible build with mold linker (Up to 5 mins but can be unstable due to mold linker)**
+```bash
+
+```
+## Build dependencies for popular distros
+
+**RHEL/Fedora/RockyLinux/AlmaLinux/CentOS Stream**
+```bash
+$ sudo dnf install boost-devel mesa-libgbm-devel mesa-libkms gmock-devel gtest-devel lttng-ust-devel mir-devel libinput-devel freetype-devel mesa-libepoxy-devel systemd-devel pixman-devel libxcb-devel libxkbcommon-devel wayland-devel glib2-devel yaml-cpp-devel 
+```
+**Debian/Ubuntu**
+```bash
+$ sudo apt install libboost-all-dev libgbm-dev mesa-utils libgmock-dev libgtest-dev liblttng-ust-dev mir-dev libinput-dev libfreetype6-dev libepoxy-dev libudev-dev libpixman-1-dev libxcb1-dev libxkbcommon-dev libwayland-dev libglib2.0-dev libyaml-cpp-dev
+```
+**OpenSuse**
+```bash
+$ sudo zypper install libboost-devel libgbm-devel mesa-kms-devel libgmock-devel libgtest-devel lttng-ust-devel mir-devel libinput-devel freetype2-devel libepoxy-devel systemd-devel pixman-devel libxcb-devel libxkbcommon-devel wayland-devel glib2-devel yaml-cpp-devel
+```
+**Arch**
+```bash
+$ sudo pacman -S boost mesa mesa-demos gmock gtest lttng-ust libinput freetype2 libepoxy systemd pixman libxcb xkbcommon wayland glib yaml-cpp
+```
 ## Packaging status
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/mir.svg)](https://repology.org/project/mir/versions)
